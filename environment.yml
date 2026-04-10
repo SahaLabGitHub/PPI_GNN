@@ -1,0 +1,34 @@
+name: gnn-ddg
+channels:
+  - pytorch
+  - pyg
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+
+  # Core scientific stack
+  - numpy>=1.24
+  - pandas>=2.0
+  - scipy>=1.11
+  - scikit-learn>=1.3
+  - matplotlib>=3.7
+
+  # Bioinformatics
+  - biopython>=1.83
+
+  # PyTorch — install the CPU build by default;
+  # replace 'cpuonly' with the appropriate cudatoolkit version for GPU use
+  # e.g. pytorch-cuda=11.8 or pytorch-cuda=12.1
+  - pytorch>=2.1
+  - cpuonly                 # ← swap this out for GPU (see Readme)
+
+  - pip:
+      # PyG and its sparse/scatter dependencies are most reliably installed
+      # via pip even inside a conda environment
+      - torch-geometric>=2.4
+      - torch-scatter
+      - torch-sparse
+      - torch-cluster
