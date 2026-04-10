@@ -6,7 +6,7 @@ Predicting protein–protein binding free energy (ΔG) from structure remains a 
 
 For inference, please follow the steps below:
 
-# Create and activate the environment
+## Create and activate the environment
 conda env create -f environment.yml
 conda activate gnn-ddg
 
