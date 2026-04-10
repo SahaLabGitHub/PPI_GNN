@@ -10,16 +10,16 @@ For inference, please follow the steps below:
 conda env create -f environment.yml
 conda activate gnn-ddg
 
-# Install PyG dependencies pinned to your torch build
+## Install PyG dependencies pinned to your torch build
 pip install torch-scatter torch-sparse torch-cluster \
     -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
 
-# Download and preprocess PPI complex 
+## Download and preprocess PPI complex 
 preprocess.py \
         --in_dir  /path/to/raw_pdbs \
         --out_dir /path/to/processed_pdbs
 
-# Run inference with a trained GNN model on a folder of PDB files.
+## Run inference with a trained GNN model on a folder of PDB files.
 test.py \
         --pdb_dirs /path/to/test_pdbs \
         --model_path /path/to/model.pt \
